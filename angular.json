@@ -3,5 +3,303 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
+    "gd-app": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/gd-app",
+      "sourceRoot": "projects/gd-app/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/gd-app",
+            "index": "projects/gd-app/src/index.html",
+            "main": "projects/gd-app/src/main.ts",
+            "polyfills": [
+              "zone.js"
+            ],
+            "tsConfig": "projects/gd-app/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "projects/gd-app/src/favicon.ico",
+              "projects/gd-app/src/assets"
+            ],
+            "styles": [
+              "projects/gd-app/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "gd-app:build:production"
+            },
+            "development": {
+              "browserTarget": "gd-app:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "gd-app:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ],
+            "tsConfig": "projects/gd-app/tsconfig.spec.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "projects/gd-app/src/favicon.ico",
+              "projects/gd-app/src/assets"
+            ],
+            "styles": [
+              "projects/gd-app/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        }
+      }
+    },
+    "gd-graph": {
+      "projectType": "library",
+      "root": "projects/gd-graph",
+      "sourceRoot": "projects/gd-graph/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/gd-graph/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/gd-graph/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/gd-graph/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/gd-graph/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
+    },
+    "gd-dashboard": {
+      "projectType": "library",
+      "root": "projects/gd-dashboard",
+      "sourceRoot": "projects/gd-dashboard/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/gd-dashboard/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/gd-dashboard/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/gd-dashboard/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/gd-dashboard/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
+    },
+    "gd-graph-wrapper1": {
+      "projectType": "library",
+      "root": "projects/gd-graph-wrapper1",
+      "sourceRoot": "projects/gd-graph-wrapper1/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/gd-graph-wrapper1/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/gd-graph-wrapper1/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/gd-graph-wrapper1/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/gd-graph-wrapper1/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
+    },
+    "gd-graph-wrapper2": {
+      "projectType": "library",
+      "root": "projects/gd-graph-wrapper2",
+      "sourceRoot": "projects/gd-graph-wrapper2/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/gd-graph-wrapper2/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/gd-graph-wrapper2/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/gd-graph-wrapper2/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/gd-graph-wrapper2/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
+    },
+    "gd-graph-wrapper3": {
+      "projectType": "library",
+      "root": "projects/gd-graph-wrapper3",
+      "sourceRoot": "projects/gd-graph-wrapper3/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/gd-graph-wrapper3/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/gd-graph-wrapper3/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/gd-graph-wrapper3/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/gd-graph-wrapper3/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
+    },
+    "gd-graph-wrapper4": {
+      "projectType": "library",
+      "root": "projects/gd-graph-wrapper4",
+      "sourceRoot": "projects/gd-graph-wrapper4/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/gd-graph-wrapper4/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/gd-graph-wrapper4/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/gd-graph-wrapper4/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/gd-graph-wrapper4/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "analytics": "26fab41d-b21b-4e49-931e-ef443065c08b"
   }
 }

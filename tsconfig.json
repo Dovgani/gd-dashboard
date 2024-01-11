@@ -7,6 +7,26 @@
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "noImplicitOverride": true,
+    "paths": {
+      "gd-dashboard": [
+        "dist/gd-dashboard"
+      ],
+      "gd-graph": [
+        "dist/gd-graph"
+      ],
+      "gd-graph-wrapper1": [
+        "dist/gd-graph-wrapper1"
+      ],
+      "gd-graph-wrapper2": [
+        "dist/gd-graph-wrapper2"
+      ],
+      "gd-graph-wrapper3": [
+        "dist/gd-graph-wrapper3"
+      ],
+      "gd-graph-wrapper4": [
+        "dist/gd-graph-wrapper4"
+      ]
+    },
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,

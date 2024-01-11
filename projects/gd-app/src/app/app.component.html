@@ -1,0 +1,89 @@
+<button class="btnTheme" (click)="onClickTheme()">Change Theme</button>
+
+<gd-window #dashboardWindow [Root]=this [Config]="dashboardWindowConfig" (actionNotifier)="actionSubject.next($event)"> 
+  <gd-dashboard *ngIf="showDashboard" #dashboard [ParentWindow]="dashboardWindow" [ParentWindowAction]="actionSubject.asObservable()">
+      <gd-window #dashboardChild1 [Root]=this [Config]="dashboardWindow1Config">
+          <gd-graph-wrapper1 #graphic1></gd-graph-wrapper1> 
+      </gd-window>
+      <gd-window #dashboardChild2 [Root]=this [Config]="dashboardWindow2Config">
+          <gd-graph-wrapper2 #graphic2></gd-graph-wrapper2>
+      </gd-window>
+      <gd-window #dashboardChild3 [Root]=this [Config]="dashboardWindow3Config">
+          <gd-graph-wrapper4 #graphic3></gd-graph-wrapper4> 
+      </gd-window>
+      <gd-window #dashboardChild4 [Root]=this [Config]="dashboardWindow4Config">
+          <gd-graph-wrapper3 #graphic4></gd-graph-wrapper3> 
+      </gd-window>
+      <gd-window #dashboardChild5 [Root]=this [Config]="dashboardWindow5Config">
+          <gd-graph-wrapper1 #graphic5></gd-graph-wrapper1> 
+      </gd-window>
+      <gd-window #dashboardChild6 [Root]=this [Config]="dashboardWindow6Config">
+          <gd-graph-wrapper3 #graphic6></gd-graph-wrapper3> 
+      </gd-window>
+  </gd-dashboard>   
+</gd-window> 
+
+<gd-window #aboutWindow [Root]=this [Config]="aboutWindowConfig"> 
+    <div [ngStyle]="{ 
+      'position' : 'relative',
+      'margin-top' : '4px',
+      'width'    : '100%', 
+      'height'   : 'calc(100% - 4px)' }">
+  
+      <gd-accordion [IsContentBorderVisible]="true" [Expanded]="0">
+        <div class="gd-accordion-header">Common Features
+            <div class="gd-accordion-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14" enable-background="new 0 0 14 14">
+                    <polygon points="7,0 7,12 13,6 7,0"/>
+                </svg> 
+            </div>
+        </div>
+      
+        <div class="panel">
+            <div>   
+              This is <b>GD Workspace</b>, but Demo focused on Dashboard, Windows and Graphics <b>GD</b> components.<br>
+              &nbsp;&#x2022;&nbsp;Dashboard content is GDWindow collection.<br>
+              &nbsp;&#x2022;&nbsp;Dashboard has ability to reorder children (just drag and drop).<br>
+              &nbsp;&#x2022;&nbsp;Dashboard auto layout content.<br>
+              &nbsp;&#x2022;&nbsp;Dashboard has bottom thumbnail panel, you expand collepse it (in demo the panel is collepsed).<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;Each GDWindow on dashboard has minimize button.<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;Minimize window means move, it to thumbnail panel.<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;Window can be restored any time, by thumbnail click.<br>
+              &nbsp;&#x2022;&nbsp;GDGraph uses Chart.js library behind.<br>
+            </div>
+        </div>
+  
+        <div class="gd-accordion-header">GD Framework
+          <div class="gd-accordion-btn">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14" enable-background="new 0 0 14 14">
+                  <polygon points="7,0 7,12 13,6 7,0"/>
+              </svg> 
+          </div>
+        </div>
+    
+        <div class="panel">
+          <div>   
+            GD framework - no third party code:<br>
+            &nbsp;&#x2022;&nbsp;<b>GDWindow</b><br>
+            &nbsp;&#x2022;&nbsp;<b>GDTooltip</b><br>
+            &nbsp;&#x2022;&nbsp;<b>GDContextmenu</b><br>
+            &nbsp;&#x2022;&nbsp;<b>GDPropertyGrid (GDPG)</b><br>
+            &nbsp;&#x2022;&nbsp;<b>GDDataGrid</b><br>
+            &nbsp;&#x2022;&nbsp;<b>GDTable</b><br>
+            &nbsp;&#x2022;&nbsp;<b>GDEditors (about 17 including date, color, combobox, ... and exotic matrix, polygon, vector ... )</b><br>
+            &nbsp;&#x2022;&nbsp;<b>GDRibbon</b><br>
+            &nbsp;&#x2022;&nbsp;<b>GDSplitter</b><br>
+            &nbsp;&#x2022;&nbsp;<b>GDSlideMessage</b><br>
+            &nbsp;&#x2022;&nbsp;<b>GDAccordion</b><br>
+            &nbsp;&#x2022;&nbsp;<b>GDTabs</b><br>
+            &nbsp;&#x2022;&nbsp;<b>GDTree</b><br>
+            &nbsp;&#x2022;&nbsp;<b>GDDashboard</b><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;and more ... 
+            <br>
+        </div>
+        </div>
+  
+    </gd-accordion>
+  </div>
+  </gd-window> 
+  
